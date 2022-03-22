@@ -24,8 +24,8 @@ export const SidebarData = [
 
     subNav:[
       {
-        title: '7 days',
-        path: '',
+        title: '5 days',
+        path: '/FiveDayForecast',
         icon: <AiIcons.AiOutlineCloud/>,
         className: 'nav-text',
       },
