@@ -1,0 +1,29 @@
+.red {
+    font-size: 10em;
+    color: 	#44aadd;
+  }
+  
+
+.card {
+    width: 20rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    opacity: 0.95;
+    background-color: #89d8f2;
+  }
+
+#moreMonday, #moreTuesday, #moreWednesday, #moreThursday, #moreFriday, #moreSaturday, #moreSunday  {
+    display: none;
+}
+
+table{
+    border : 0px solid #000000;
+}
+
+th{
+    padding: 7px;
+}
+
+  
