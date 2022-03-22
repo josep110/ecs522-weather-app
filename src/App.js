@@ -6,22 +6,24 @@ import WeatherToday from './pages/Todayweather';
 
 
 
+class  App extends React.Component {
 
-function App() {
-
-
+  render(){
  
   return (
     <Router>
       <Sidebar />
       <Switch>
       <Route exact path="/Home" render={() => (
-         <Home/>
+      
+         <Home Message="Hi Username !" position=""/>
    )}/>
       <Route  path='/Todayweather' exact component={WeatherToday} />
       </Switch>
     </Router>
   );
 }
+}
 
 export default App;
+
