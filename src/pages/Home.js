@@ -20,19 +20,15 @@ function Item(props){
 
 
     class Home extends React.Component{
-      constructor(props) {
-            super(props);
-
-          }
-
+     
       render(){
       return(
             <div>
 
                   <div className="container">
                         <div className="header-box">
-                        <div className="greeting-box "><Item  Icon={hand} Text="UserName"></Item></div>
-                        <div className="location-box"><Item  Icon={locpin} Text="London"></Item></div>
+                        <div className="greeting-box "><Item  Icon={hand} Text={this.props.Message}></Item></div>
+                        <div className="location-box"><Item  Icon={locpin} Text={this.props.position}></Item></div>
                         <div className="date-box"><Item  Icon={calendar} Text={moment().format("dddd "+'LL')}></Item>   </div>
                         </div>
                         <div className="plan-list">
