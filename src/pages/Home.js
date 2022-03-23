@@ -6,7 +6,6 @@ import calendar from "./icons/calendar.ico";
 import moment from "moment";
 import React from 'react';
 import weatherIcon from "./icons/rain&sun.ico"
-import map from "./icons/map.ico"
 import ideaIcon from "./icons/idea.ico"
 import profileIco from "./icons/profile.ico"
 import {useEffect, useState} from "react";
