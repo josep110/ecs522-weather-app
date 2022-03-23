@@ -11,7 +11,7 @@ import rainyIcon from"./icons/rain.ico";
 import './Todayweather.css';
 import {useEffect, useState} from "react";
 import hazeIcon from "./icons/haze.ico";
-
+import cloudIcon from "./icons/cloud.ico"
 
 
 const API_KEY = "c49b58637f116ba62e71ca04a520f9bb";
@@ -43,6 +43,7 @@ function WeatherComp ({weatherData})  {
       }, [lat,long])
 
 
+      //chnage the weather icon according to the weather Id
  function get_WeatherIcon(rangeId) {
     switch (true) {
       case rangeId >= 200 && rangeId < 232:
@@ -54,13 +55,13 @@ function WeatherComp ({weatherData})  {
       case rangeId >= 600 && rangeId <= 622:
         return(snowIcon);
       case rangeId >= 701 && rangeId <= 781:
-        return(sunIcon);
+        return(hazeIcon);
       case rangeId === 800:
         return(sunIcon);
       case rangeId >= 801 && rangeId <= 804:
         return(precipitation);
       default:
-        return(rainyIcon);;
+        return(cloudIcon);;
     }
   }
 

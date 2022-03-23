@@ -16,13 +16,6 @@
       text-align:center;
     }
     
-    /* menu icon*/
-    .menu-icon{
-      width: 25%;
-      cursor: pointer;
-      margin-top:-5%;
-    }
-    
     /* City and date */
     
     .city-text{
@@ -58,7 +51,7 @@
     }
     
     
-    /*wind, humidity and cloud*/
+    /*wind, humidity and cloud icons acnd container */
     .wph-box{
       background-color: #1e1c40;
       color: #b9d8f2;
