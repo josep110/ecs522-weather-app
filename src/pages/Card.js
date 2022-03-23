@@ -1,11 +1,11 @@
 import React from 'react';
 import './Card.css';
-import rain from '../icons/rain.ico'
-import sun from '../icons/sun.ico'
-import clouds from '../icons/cloud.ico'
-import rainSun from '../icons/rain&sun.ico'
-import storm from '../icons/storm.ico'
-import snow from '../icons/snow.ico'
+import rain from './icons/rain.ico'
+import sun from './icons/sun.ico'
+import clouds from './icons/cloud.ico'
+import rainSun from './icons/rain&sun.ico'
+import storm from './icons/storm.ico'
+import snow from './icons/snow.ico'
 
 
 class Card extends React.Component {
