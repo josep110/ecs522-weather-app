@@ -1,7 +1,7 @@
 import Header from './Header';
 import Cover from './Cover';
 import Hourly from './Hourly';
-import 'bootstrap/dist/css/bootstrap.min.css';
+//import 'bootstrap/dist/css/bootstrap.min.css';
 import "weather-icons/css/weather-icons.css";
 import React, {Component} from 'react';
 // import componentDidUpdate;
