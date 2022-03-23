@@ -3,10 +3,13 @@ import Sidebar from './components/Sidebar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import WeatherToday from './pages/Todayweather';
+import Profile from './pages/Profile';
+import Settings from './pages/Settings';
+import React from 'react';
 
 
 
-class  App extends React.Component {
+class App extends React.Component {
 
   render(){
  
@@ -19,6 +22,8 @@ class  App extends React.Component {
          <Home Message="Hi Username !" position=""/>
    )}/>
       <Route  path='/Todayweather' exact component={WeatherToday} />
+      <Route path='/Profile' exact component={Profile} />
+      <Route path='/Settings' exact component={Settings} />
       </Switch>
     </Router>
   );

@@ -12,7 +12,7 @@ export const SidebarData = [
   },
   {
     title: 'Profile',
-    path: '/profile',
+    path: '/Profile',
     icon: <IoIcons.IoMdPeople />,
     className: 'nav-text',
   },
@@ -39,7 +39,7 @@ export const SidebarData = [
   },
   {
     title: 'Settings',
-    path: '/settings',
+    path: '/Settings',
     icon: <AiIcons.AiFillSetting />,
     className: 'nav-text'
   },

@@ -1,0 +1,61 @@
+See {
+  text-align: center;
+}
+
+
+.title {
+  padding-left: 10px;
+  background-color: #282c34;
+  display: flex;
+  color: white;
+  text-align: left;
+}
+
+.App-body {
+  background-color: white;;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  font-size: calc(10px + 2vmin);
+  color: black;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.setting-untriggered {
+  padding-left: 10px;
+  padding-right: 10px;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  margin: 10px;
+  background-color: grey;
+  color: white;
+  float: left;
+}
+
+.settinglabel {
+  float: left;
+}
+
+.setting-triggered {
+  padding-left: 10px;
+  padding-right: 10px;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  margin: 10px;
+  background-color: #282c34;
+  color: black;
+  float: left;
+  background-color: lightblue;
+}
