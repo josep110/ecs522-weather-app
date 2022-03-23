@@ -19,7 +19,7 @@ class App extends React.Component {
       <Switch>
       <Route exact path="/Home" render={() => (
       
-         <Home Message="Hi Username !" position=""/>
+         <Home Message="Hi UserName !" />
    )}/>
       <Route  path='/Todayweather' exact component={WeatherToday} />
       <Route path='/Profile' exact component={Profile} />
