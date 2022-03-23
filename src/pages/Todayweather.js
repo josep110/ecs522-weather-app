@@ -4,7 +4,6 @@ import windIncon from "./icons/wind2.ico" ;
 import humidity from "./icons/waterdrop.ico";
 import precipitation from "./icons/rain.ico";
 import stormIcon from "./icons/storm.ico";
-import arrowIcon from "./icons/arrow.ico";
 import snowIcon from "./icons/snow.ico";
 import sunIcon from "./icons/sun.ico";
 import rainyIcon from"./icons/rain.ico";
@@ -96,7 +95,6 @@ return(
                           </div>
               </div>
         </main>
-      
         </div>
     ): (
       <id></id>

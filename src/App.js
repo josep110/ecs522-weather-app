@@ -6,7 +6,7 @@ import WeatherToday from './pages/Todayweather';
 import Profile from './pages/Profile';
 import Settings from './pages/Settings';
 import React from 'react';
-
+import FiveDayForecast from "./pages/FiveDayForecast"
 
 
 class App extends React.Component {
@@ -22,6 +22,7 @@ class App extends React.Component {
          <Home Message="Hi UserName !" />
    )}/>
       <Route  path='/Todayweather' exact component={WeatherToday} />
+      <Route  path='/FiveDayForecast' exact component={FiveDayForecast} />
       <Route path='/Profile' exact component={Profile} />
       <Route path='/Settings' exact component={Settings} />
       </Switch>
