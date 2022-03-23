@@ -9,7 +9,7 @@ import weatherIcon from "./icons/rain&sun.ico"
 import ideaIcon from "./icons/idea.ico"
 import profileIco from "./icons/profile.ico"
 import {useEffect, useState} from "react";
-import map from "./icons/map.ico"
+
 
 //function that creates icons with textx used in the home page
 function Item(props){
@@ -88,7 +88,7 @@ const API_URL='https://api.openweathermap.org/data/2.5';
                   <div className="container">
                         <div className="header-box">
                         <div className="greeting-box "><Item  Icon={hand} Text={props.Message}></Item></div>
-                        <div className="location-box"><Item  Icon={locpin} Text={data.name}></Item></div>
+                        <div className="location-box"><Item  Icon={locpin} Text={props.City}></Item></div>
                         <div className="date-box"><Item  Icon={calendar} Text={moment().format("dddd"+'LL')}></Item></div>
                         <div className="plan-box"><Item  Icon={ideaIcon} Text={get_plan()}></Item></div>
                         </div>

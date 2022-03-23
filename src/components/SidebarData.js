@@ -18,7 +18,7 @@ export const SidebarData = [
   },
   {
     title: 'Weather',
-    path: '/Todayweather',
+    path: '/Today',
     icon: <AiIcons.AiOutlineCloud />,
     className: 'nav-text',
 

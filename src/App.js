@@ -7,9 +7,22 @@ import Profile from './pages/Profile';
 import Settings from './pages/Settings';
 import React from 'react';
 import FiveDayForecast from "./pages/FiveDayForecast"
+import Today from "./pages/Today"
+
+
 
 
 class App extends React.Component {
+
+  state = {
+    location:null,
+    degreeType: null,
+    lat:null,
+    lon:null,
+    
+  }
+  
+
 
   render(){
  
@@ -19,9 +32,9 @@ class App extends React.Component {
       <Switch>
       <Route exact path="/Home" render={() => (
       
-         <Home Message="Hi UserName !" />
+         <Home Message="Hi UserName" City={this.state.temp}/>
    )}/>
-      <Route  path='/Todayweather' exact component={WeatherToday} />
+      <Route  path='/Today' exact component={Today} />
       <Route  path='/FiveDayForecast' exact component={FiveDayForecast} />
       <Route path='/Profile' exact component={Profile} />
       <Route path='/Settings' exact component={Settings} />
