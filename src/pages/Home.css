@@ -2,11 +2,12 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      background-color:#1e1c40;      
       
 }
 
 .container{
-      background-color:#1e1c40;      
+      margin-top:-10%;     
 }
 
 
@@ -23,26 +24,26 @@
 
 }
 
-.date-box, .location-box{
+.date-box{font-size:90%;;}
+
+.date-box, .location-box, .plan-box{
       margin-top:-20%;
       padding: 0;
 }
-.greeting-box{
-      background-color:#1e1c40;
-}
+
 
 /* footer icons*/
 .icon-box{
-      background-color: #1e1c40;
       display:flex;
       justify-content: center;
-      margin-top:10%;
+      margin-top:-5%;
 }
-.icon-bottom{
+.icon-profile{
       width:80%;
       vertical-align:middle;  
       margin-left:-20%;
       margin-right: 20%;
+      margin-top:-5%;
 }
 .icon-weather{
       width:90%;
@@ -51,57 +52,5 @@
       margin-right:-20%;
       margin-left:20%;
 }
-
-/* sidebar menu*/
-.sideBar {
-      height: 100%;
-      width: 0;
-      position: fixed;
-      z-index: 1;
-      top: 0;
-      left: 0;
-      background-color: rgba(30, 28, 64, 0.2);
-      overflow-x: hidden;
-      transition: 0.5s;
-      padding-top: 60px;
-    }
-
-    .sideBar a {
-      padding: 8px 8px 8px 32px;
-      text-decoration: none;
-      font-size: 25px;
-      color: #86aadf;
-      display: block;
-      transition: 0.3s;
-    }
-    
-    .sideBar a:hover {
-      color: #86aadf;
-    }
-    
-    .sideBar .closebtn {
-      position: absolute;
-      top: 0;
-      right: 25px;
-      font-size: 36px;
-      margin-left: 50px;
-    }
-
-    .openbtn {
-      font-size: 30px;
-      cursor: pointer;
-      background-color: #1e1c40;
-      color: #86aadf;
-      padding: 10px 15px;
-      border: none;
-    }
-    
-    .openbtn:hover {
-      background-color: #262450;
-    }
-    .main-open {
-      transition: margin-left .5s;
-      padding: 16px;
-    }
 
     
