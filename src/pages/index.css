@@ -1,0 +1,129 @@
+.h1{
+    text-align: center;
+    font-size: 4rem;
+    color: #EEEEEE;
+}
+
+.h2{
+font-size: 2.4rem;
+color: #EEEEEE;
+}
+
+hr{
+    height: 1rem !important;
+    color: #EEEEEE !important;
+    opacity: 0.75;
+}
+
+.cityName{
+    padding-top: 5%;
+    text-align: center;
+    font-size: 4rem;
+}
+
+.caps{
+    text-transform: capitalize;
+}
+
+/*Logo classes*/
+.logo {
+    color: #EEEEEE;
+    position: relative;
+    bottom: 3rem;
+    text-align: center;
+}
+
+.logo1 {
+    color: yellow;
+}
+
+.logo2 {
+    color: grey;
+}
+
+.logo1,
+.logo2 {
+    padding: 10%;
+    float: left;
+}
+
+.logo,
+.logo1,
+.logo2 {
+    box-sizing: content-box;
+}
+
+
+.sectionOne {
+    width: 33%;
+    display: inline-block;
+    text-align: center;
+}
+
+.temp {
+    font-size: 3rem;
+    margin-top: 1em;
+}
+
+.uv,
+.cloud {
+    display: inline-block;
+    font-size: 4rem;
+    width: 49%;
+    position: relative;
+    bottom: 2rem;
+}
+
+
+.text {
+    font-size: 3rem;
+    padding: 2%;
+    text-align: center;
+}
+
+.vertical-row {
+    position: relative;
+    top: 10px;
+    height: 12rem;
+    display: inline-block;
+    width: 0.5rem;
+    background-color: white;
+}
+
+.hourly{
+    overflow-y: scroll;
+    overflow-x: hidden;
+  
+}
+
+.left,.middle,.right{
+    width: 33.33%;
+    text-align: center;
+    display: inline-block;
+    color: #EEEEEE;
+}
+
+.left,.right{
+    position: relative;
+    top:1rem;
+    padding-right: 0;
+}
+
+.row{
+    padding-bottom: 4rem;
+    text-align: center;
+}
+
+.space{
+    padding-bottom: 20px;
+}
+
+
+.button1{
+    position: absolute;
+    display: inline-block;
+    margin: 5%;
+    width: 10rem;
+    background-color: transparent;
+    font-size: 2rem;
+}
