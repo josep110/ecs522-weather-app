@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from './Card';
-import Sidebar from './components/Sidebar';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Sidebar from '../components/Sidebar';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 class FiveDayForecast extends React.Component {
   //TODO: take location, unit etc. from settings
@@ -36,12 +36,12 @@ class FiveDayForecast extends React.Component {
   
   render() {
     return (
-      <Router>
-        <Sidebar />
-      </Router>
       <div className="container">
-      <h1 className="display-1 jumbotron">5-Day Forecast</h1>
-      <h5 className="display-5 text-muted">{this.state.city+", "+this.state.country}</h5>
+        <Router>
+          <Sidebar />
+        </Router>
+        <h1 className="display-1 jumbotron">5-Day Forecast</h1>
+        <h5 className="display-5 text-muted">{this.state.city+", "+this.state.country}</h5>
         <div className="row justify-content-center" id='row justify-content-center'>
 
           {this.formatCards()}
