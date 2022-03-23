@@ -2,12 +2,13 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      background-color:#1e1c40;      
+     
       
 }
 
-.container{
-      margin-top:-10%;     
+.home-container{
+      background-color:#1e1c40;
+      max-height:100%  
 }
 
 
@@ -24,7 +25,7 @@
 
 }
 
-.date-box{font-size:90%;;}
+.date-box{font-size:80%;;}
 
 .date-box, .location-box, .plan-box{
       margin-top:-20%;
@@ -36,7 +37,6 @@
 .icon-box{
       display:flex;
       justify-content: center;
-      margin-top:-5%;
 }
 .icon-profile{
       width:80%;

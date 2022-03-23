@@ -67,12 +67,12 @@ function WeatherComp ({weatherData})  {
 
 return(
 
-<div className="container">
+<div className="weather-container">
 
 {(typeof data.main != 'undefined') ? (
-      <div>
+      <div className="w-container">
 
-        <main class= "App-body">
+        <main class= "w-body">
 
                     <p className="city-text">{data.name}</p>
                     <p className="date-text">{moment().format("dddd "+'LL')}</p>
@@ -96,7 +96,7 @@ return(
                           </div>
               </div>
         </main>
-        <footer><a href="hourly.js"><img className="arrow-icon" src={arrowIcon}></img></a></footer>
+      
         </div>
     ): (
       <id></id>
