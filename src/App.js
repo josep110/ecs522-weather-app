@@ -37,14 +37,18 @@ class App extends React.Component { /* Prototype for root 'App' class */
         
           <Home Message={'Hi ' + this.state.username + '!'} />
     )}/>
-   <Route  path='/Today' render={() => (
+
+<Route exact path="/Today" render={() => (
+        
+        <Today Latitude={"51.51257250195812"} Longitude={this.state.lon} Units={this.state.celsius} />
+  )}/>
+
       
-      <Today Latitude={"51.51257250195812"} Longitude={this.state.lon} Units={this.state.celsius}/>
      
         <Route path='/Profile' exact component={Profile} />
         <Route path='/FiveDayForecast' exact component={FiveDayForecast} />
         <Route path='/App' exact component={Apps} />
-        <Route path='/Settings' exact component={() => <Settings parentCallback={this.callbackFunction}/>} />
+        <Route path='/Settings' render={() => <Settings parentCallback={this.callbackFunction}/>} />
         </Switch>
       </Router>
     );
