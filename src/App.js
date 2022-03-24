@@ -1,4 +1,4 @@
-import './App.css';
+// import './App.css';
 import Sidebar from './components/Sidebar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './pages/Home';
@@ -14,22 +14,28 @@ class App extends React.Component { /* Prototype for root 'App' class */
 
   constructor(props){
     super(props)
-    this.state = {username: "", darkmode: true, celsius: true}
+    this.state = {username: "[NO NAME ENTERED]", imageurl: "", stylePath: "./App-alt.css", celsius: true}   /* initialising state variables for root App objects */
     console.log(this.state)
   }
 
-  callbackFunction = (entry) => {
+  callbackFunction = (entry) => {          /* Callback function for receiving data from child components */
     if (entry === "unit"){
-      // this.setState({celsius: true})
+      this.setState({celsius: !this.state.celsius})
     } else if (entry === "dark"){
-      // this.setState({darkmode: !darkmode})
+      if (this.state.stylePath === "./App-alt.css"){
+        this.setState({stylePath: "./App.css"})
+      } else {
+        this.setState({stylePath: "./App-alt.css"})
+      }
     } else {
       this.setState({username: entry})
     }
   }
+
   render(){
  
     return (    /* Sets up links to other .js files acting as application 'pages' */
+      
       <Router>
         <Sidebar />
         <Switch>
@@ -37,6 +43,7 @@ class App extends React.Component { /* Prototype for root 'App' class */
         
           <Home Message={'Hi ' + this.state.username + '!'} />
     )}/>
+<<<<<<< Updated upstream
 <Route exact path="/Today" render={() => (
         <Today Latitude={"51.51257250195812"} Longitude={this.state.lon} Units={this.state.celsius} />
   )}/>
@@ -44,6 +51,13 @@ class App extends React.Component { /* Prototype for root 'App' class */
         <Route path='/FiveDayForecast' exact component={FiveDayForecast} />
         <Route path='/App' exact component={Apps} />
         <Route path='/Settings' render={() =>( <Settings parentCallback={this.callbackFunction}/> )}/>
+=======
+        <Route  path='/Todayweather' exact component={WeatherToday} />    
+        <Route path='/Profile' exact component={() => <Profile name={this.state.username} stylepath={this.state.stylePath}/>} />
+        <Route path='/FiveDayForecast' exact component={FiveDayForecast}  stylepath={this.state.stylePath}/>
+        <Route path='/App' exact component={Apps} />
+        <Route path='/Settings' exact component={() => <Settings parentCallback={this.callbackFunction} stylepath={this.state.stylePath}/>} />
+>>>>>>> Stashed changes
         </Switch>
       </Router>
     );
@@ -51,4 +65,3 @@ class App extends React.Component { /* Prototype for root 'App' class */
 }
 
 export default App;
-

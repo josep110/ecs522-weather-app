@@ -37,23 +37,30 @@ class Section extends React.Component {
   }
 }
 
+class Profile extends React.Component {
 
-const H_Settings = () => {
-    return (
-      <div>
-        <div className="App">
-          <div className="title">
-          <h1>Profile</h1>
-          </div>
-          <div className="App-body">
-            <img className="profilepic" src={joseph} alt="this is a picture"/>
-            <Section label="Home" to="./Home"/>
-            <Section label="Weather" to="./Weather"/>
-            <Section label="Settings" to="./Settings" />
+  constructor(props){
+    super(props)
+    this.state = {name: this.props.name}
+  }
+
+  render(){
+      return (
+        <div>
+          <div className="App">
+            <div className="title">
+            <h1>{this.state.name}</h1>
+            </div>
+            <div className="App-body">
+              <img className="profilepic" src={joseph} alt="this is a picture"/>
+              <Section label="Home" to="./Home"/>
+              <Section label="Weather" to="./Todayweather"/>
+              <Section label="Settings" to="./Settings" />
+            </div>
           </div>
         </div>
-      </div>
-    )
+      )
+  }
 }
 
-export default H_Settings;
+export default Profile;
