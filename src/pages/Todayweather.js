@@ -24,7 +24,7 @@ return(
                     <p className="date-text">{moment().format("dddd "+'LL')}</p>
 
 
-                    <p className="temp">{Math.round(props.temperature)}&deg;C</p>
+                    <p className="temp">{Math.round(props.temperature)}&deg</p>
                     <img className="main-icon" src={props.Icon}></img>
 
               <div className="wph-box">
