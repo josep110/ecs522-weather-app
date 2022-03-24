@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-//This component holds the HTML layout just for the bottom section, where the hourly weather data is stored. The data is taken from App.js.
+
 var d = new Date();
 const Hourly = (props) => {
     const weatherIcon = {
@@ -12,7 +12,6 @@ const Hourly = (props) => {
         Clouds: "wi-day-fog"            
        };
 
-    // This function checks to see which icon should be displayed, and returns that value. 
     function checkIcon(rangeId) {
             for (let index = 1; index < 24; index++) {
                 switch (true) {
@@ -36,8 +35,6 @@ const Hourly = (props) => {
         }
     }
   return (
-
-    //This section holds the html for the layout of the page. The variables are passed within the html tags using javascript.
     <div className="hourly">
     <h1 className="h1">Hourly Forecast</h1>
     <br></br>
