@@ -2,12 +2,13 @@ import './App.css';
 import Sidebar from './components/Sidebar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './pages/Home';
-import WeatherToday from './pages/Todayweather';
+import Today from "./pages/Today"
 import Profile from './pages/Profile';
 import Settings from './pages/Settings';
 import FiveDayForecast from './pages/FiveDayForecast';
 import Apps from './pages/App';
 import React from 'react';
+
 
 class App extends React.Component { /* Prototype for root 'App' class */
 
@@ -36,7 +37,8 @@ class App extends React.Component { /* Prototype for root 'App' class */
         
           <Home Message={'Hi ' + this.state.username + '!'} />
     )}/>
-        <Route  path='/Todayweather' exact component={WeatherToday} />    
+           <Today Latitude={"51.51257250195812"} Longitude={"-0.12880590133788425"} Units={this.state.celsius}/>
+)} /> 
         <Route path='/Profile' exact component={Profile} />
         <Route path='/FiveDayForecast' exact component={FiveDayForecast} />
         <Route path='/App' exact component={Apps} />
