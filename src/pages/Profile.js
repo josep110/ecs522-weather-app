@@ -1,11 +1,6 @@
 import React from "react";
 import './profile.css';
-
-
-// function Transition(to){
-//   useNavigate(to);
-// }
-
+import joseph from './images/joseph.jpg';
 
 class Section extends React.Component {
 
@@ -68,7 +63,7 @@ const H_Settings = () => {
           <h1>Profile</h1>
           </div>
           <div className="App-body">
-            {/* <img src={me} alt="this is a picture" /> */}
+            <img className="profilepic" src={joseph} alt="this is a picture"/>
             <Section label="Home"/>
             <Section label="Weather"/>
             <Section label="Settings"/>
