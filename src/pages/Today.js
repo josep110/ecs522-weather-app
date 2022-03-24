@@ -39,20 +39,32 @@ class Today extends React.Component{
       state = {
             city: null,
             temp:null,
-            lat:51.51549,
-            lon:-0.12635,
+            lat:"51.5211064",
+            lon:"-0.1580341",
             wind:null,
           description:null,
           humidity:null,
           rangeId:null,
-          metric:null,
+          units:"metric",
           }
 
-
+          /** function to get the current location, for seom reason it is not working
+           
+          getLocation(){
+          navigator.geolocation.getCurrentPosition(position =>{
+            this.setState({
+                  lat:JSON.stringify(position.coords.latitude),
+                  lon:JSON.stringify(position.coords.longitude),
+            })
+            console.log("latitude",this.state.lat , "longitude", this.state.lon)
+      })
+      }
+      */
           
 
-          componentDidMount= () => {
-             fetch(`https://api.openweathermap.org/data/2.5/weather/?lat=${this.state.lat}&lon=${this.state.lon}&units=metric&appid=c49b58637f116ba62e71ca04a520f9bb`)
+          componentDidMount =()=>{
+
+             fetch(`https://api.openweathermap.org/data/2.5/weather/?lat=${this.state.lat}&lon=${this.state.lon}&units=${this.state.units}&appid=c49b58637f116ba62e71ca04a520f9bb`)
             
             .then(res => res.json())
           .then(result => {
@@ -73,7 +85,7 @@ class Today extends React.Component{
           render(){
  
             return (
-                  <Todayweather City={this.state.city} temperature={this.state.temp} Wind={this.state.wind} Humidity={this.state.humidity} Description={this.state.description}     Icon={get_WeatherIcon(this.state.rangeId)}/>
+                  <Todayweather City={this.props.City} temperature={this.state.temp} Wind={this.state.wind} Humidity={this.state.humidity} Description={this.state.description}     Icon={get_WeatherIcon(this.state.rangeId)}/>
 
             )}
 }

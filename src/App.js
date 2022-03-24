@@ -2,7 +2,6 @@ import './App.css';
 import Sidebar from './components/Sidebar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './pages/Home';
-import WeatherToday from './pages/Todayweather';
 import Profile from './pages/Profile';
 import Settings from './pages/Settings';
 import React from 'react';
@@ -32,9 +31,12 @@ class App extends React.Component {
       <Switch>
       <Route exact path="/Home" render={() => (
       
-         <Home Message="Hi UserName" City={this.state.temp}/>
+         <Home Message={"to be passed"} City={"to be passed"}/>
    )}/>
-      <Route  path='/Today' exact component={Today} />
+      <Route  path='/Today' render={() => (
+      
+      <Today  City={"to be passed"}/>
+)} />
       <Route  path='/FiveDayForecast' exact component={FiveDayForecast} />
       <Route path='/Profile' exact component={Profile} />
       <Route path='/Settings' exact component={Settings} />

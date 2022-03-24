@@ -9,7 +9,7 @@ import weatherIcon from "./icons/rain&sun.ico"
 import ideaIcon from "./icons/idea.ico"
 import profileIco from "./icons/profile.ico"
 import {useEffect, useState} from "react";
-
+import map from "./icons/map.ico"
 
 //function that creates icons with textx used in the home page
 function Item(props){
