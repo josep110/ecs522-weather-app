@@ -10,7 +10,6 @@ import './index.css';
 import './reset.css';
 // import componentDidUpdate;
 import { useEffect } from 'react';
-import { geolocated } from "react-geolocated";
 
  
 const apiKey="8bcf728dfda203129b2f723df9feb085";
@@ -80,8 +79,6 @@ class App extends React.Component{
       console.log(this.state)
   }
 
-
-  
     
     //This method here allows for kelvin data provided by the API into celcius. 
     calCelsius(temp){
@@ -222,7 +219,6 @@ class App extends React.Component{
            
     };
 
-
     //The render here allows for the variables to be used in the other components, and this data is passed through these variables.
     render(){
         return(
@@ -253,9 +249,6 @@ class App extends React.Component{
             />
             
         </div> 
-
-
-
         );
     }
 }
