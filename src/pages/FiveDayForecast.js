@@ -35,7 +35,7 @@ class FiveDayForecast extends React.Component {
   render() {
     return (
       <div className="container">
-        <h1 className="display-1 jumbotron">5-Day Forecast</h1>
+        <h1 className="display-2 jumbotron">5-Day Forecast</h1>
         <h5 className="display-5 text-muted">{this.state.city+", "+this.state.country}</h5>
         <div className="row justify-content-center" id='row justify-content-center'>
 
