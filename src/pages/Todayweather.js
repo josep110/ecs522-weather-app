@@ -5,16 +5,16 @@ import humidity from "./icons/waterdrop.ico";
 import precipitation from "./icons/rain.ico";
 import './Todayweather.css';
 
+/**this is a  function component that renders the weather for the day, it gets props passed by Today.js.
+ The props to be passed are: City, Temperature,Humidity, Wind speed, General conditions and  an icon that represents the weather description, 
+*/
 
 
 function Todayweather (props)  {
-
-
-  
+ 
 return(
 
 <div className="weather-container">
-
 
       <div className="w-container">
 
@@ -22,8 +22,6 @@ return(
 
                     <p className="city-text">{props.City}</p>
                     <p className="date-text">{moment().format("dddd "+'LL')}</p>
-
-
                     <p className="temp">{Math.round(props.temperature)}&deg;</p>
                     <img className="main-icon" src={props.Icon}></img>
 

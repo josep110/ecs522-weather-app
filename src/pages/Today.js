@@ -8,9 +8,12 @@ import sunIcon from "./icons/sun.ico";
 import rainyIcon from"./icons/rain.ico";
 
 
+/** This is a class component that passes props to the Todayweather component.
+ It takes geolocation props  that are then passed to the call of the openweathermap API. The data from this call is stored in the state variables and passed as props to the Todaywather component
+ */
 
 
-
+//function that sets the correct weather icon according tot he current weather conditions i.e sunny, cloudy, etc. It takes the rangeID as a property
 function get_WeatherIcon(rangeId) {
       switch (true) {
         case rangeId >= 200 && rangeId < 232:
@@ -35,6 +38,7 @@ function get_WeatherIcon(rangeId) {
 
 
 class Today extends React.Component{
+    //state variables to pass to the Todayweather component 
       state = {
             city: null,
             temp:null,
@@ -47,7 +51,7 @@ class Today extends React.Component{
           units:"metric",
           }
 
-          /** function to get the current location, for seom reason it is not working
+          /** function to get the current location
            
           getLocation(){
           navigator.geolocation.getCurrentPosition(position =>{
@@ -67,7 +71,7 @@ class Today extends React.Component{
             
             .then(res => res.json())
           .then(result => {
-            console.log("cdata fetched by esther",result);
+            console.log(result);
             this.setState({
                   city:result.name,
                   temp:result.main.temp,
@@ -82,10 +86,9 @@ class Today extends React.Component{
 
 
           render(){
- 
+            //we the state variables as propr to Todayweather
             return (
                   <Todayweather City={this.state.city} temperature={this.state.temp} Wind={this.state.wind} Humidity={this.state.humidity} Description={this.state.description}     Icon={get_WeatherIcon(this.state.rangeId)}/>
-
             )}
 }
 

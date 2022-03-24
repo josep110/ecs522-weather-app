@@ -54,7 +54,7 @@ const API_URL='https://api.openweathermap.org/data/2.5';
       }, [lat,long])
 
 
-      //recommend a plan from a predtermined list according to weather id     
+      //This function recommebs plans to the users according to the weather conditions, it chooses one at random    
       function get_plan(rangeId) {
             var sunnyPlans=["Go to the park!","Have a picnik!","Grab a bite in a terrace!","Go cycling!"]
             var stormPlans=["Try to stay indoors","Seek sheldter"]
