@@ -83,7 +83,7 @@ const API_URL='https://api.openweathermap.org/data/2.5';
           }
       
       return(
-            <div>
+            <div className="home-container">
 
                   <div className="container">
                         <div className="header-box">
