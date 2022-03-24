@@ -1,20 +1,25 @@
+
+/*H elements*/
 .h1{
     text-align: center;
-    font-size: 4rem;
+    font-size: 1rem !important;
     color: #EEEEEE;
+    padding-top: 10%;
 }
 
 .h2{
-font-size: 2.4rem;
+font-size: 1rem;
 color: #EEEEEE;
 }
 
 hr{
-    height: 1rem !important;
+    height: 0.5rem !important;
     color: #EEEEEE !important;
-    opacity: 0.75;
+    background-color: #EEEEEE !important;
+    margin: 1rem;
 }
 
+/*Header classes*/
 .cityName{
     padding-top: 5%;
     text-align: center;
@@ -54,6 +59,7 @@ hr{
 }
 
 
+/*Top section*/
 .sectionOne {
     width: 33%;
     display: inline-block;
@@ -65,13 +71,26 @@ hr{
     margin-top: 1em;
 }
 
+.button1{
+    position: absolute;
+    right: 3%;
+    top: 2%;
+    display: inline-block;
+    margin: 5%;
+    width: 6rem;
+    background-color: transparent;
+    font-size: 1rem;
+}
+
+/*UV and Cloud Cover Section*/
 .uv,
 .cloud {
     display: inline-block;
     font-size: 4rem;
-    width: 49%;
+    width: 46%;
     position: relative;
     bottom: 2rem;
+    text-align: center;
 }
 
 
@@ -84,12 +103,14 @@ hr{
 .vertical-row {
     position: relative;
     top: 10px;
-    height: 12rem;
+    height: 8rem;
     display: inline-block;
     width: 0.5rem;
     background-color: white;
 }
 
+
+/*Hourly section*/
 .hourly{
     overflow-y: scroll;
     overflow-x: hidden;
@@ -107,23 +128,18 @@ hr{
     position: relative;
     top:1rem;
     padding-right: 0;
+    padding-top: 1rem;
 }
+
 
 .row{
     padding-bottom: 4rem;
     text-align: center;
 }
 
+
 .space{
     padding-bottom: 20px;
 }
 
 
-.button1{
-    position: absolute;
-    display: inline-block;
-    margin: 5%;
-    width: 10rem;
-    background-color: transparent;
-    font-size: 2rem;
-}

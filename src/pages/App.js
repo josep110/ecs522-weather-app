@@ -1,15 +1,22 @@
+//These imports allow for the Header, Cover and Hourly components to be imported into the code. Icons, react and the css files are also imported into the code.
+
 import Header from './Header';
 import Cover from './Cover';
 import Hourly from './Hourly';
 //import 'bootstrap/dist/css/bootstrap.min.css';
 import "weather-icons/css/weather-icons.css";
 import React, {Component} from 'react';
+import './index.css';
+import './reset.css';
 // import componentDidUpdate;
 import { useEffect } from 'react';
+import { geolocated } from "react-geolocated";
 
  
 const apiKey="8bcf728dfda203129b2f723df9feb085";
 
+
+//There is a class here with a constructor, where the variables are decalared and set to undefined.
 class App extends React.Component{
     
     constructor(){
@@ -30,7 +37,7 @@ class App extends React.Component{
             description3:"",
             error:false,
             dt:undefined,
-            city: "Chennai",
+            city: "Hounslow",
             lat:undefined,
             lng:undefined,
             hourly:[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]
@@ -43,6 +50,7 @@ class App extends React.Component{
         //     if (!typeof this.state.lat==="undefined"){
         //     this.getWeather2(this.state.lat, this.state.long);
         // }
+
 
 
         this.weatherIcon = {
@@ -72,13 +80,16 @@ class App extends React.Component{
       console.log(this.state)
   }
 
+
+  
     
-    
+    //This method here allows for kelvin data provided by the API into celcius. 
     calCelsius(temp){
         let cell = Math.floor(temp - 273.15);
         return cell;
        }
 
+    //This method here allow for the cloud cover data to be converted into text values like low medium and high using a switch and cases.
     cloudCover(cover){
         switch (true) {
             case cover >= 0 && cover < 33:
@@ -95,6 +106,7 @@ class App extends React.Component{
        }
     }
 
+    //This method here allows for the UV intensity to be converted from a number into a value using a switch and case statements. 
     uvIntensity(uvIntense){
         switch (true) {
             case uvIntense >= 0 && uvIntense < 2:
@@ -114,6 +126,7 @@ class App extends React.Component{
        }
     }
        
+    //This method here allows for the weather icon to be decided based on the rangeid of the method.
     get_WeatherIcon(icons, rangeId) {
         switch (true) {
             case rangeId >= 200 && rangeId <= 232:
@@ -141,6 +154,7 @@ class App extends React.Component{
         }
     }
 
+    //These methods here allow for the calculations to be made, such as deciding which icon to display based on the id of the weather, or displaying the levels of cloud cover or uv.
     hourTemp(rangeId){
         for (let index = 1; index < 24; index++) {
             switch (true) {
@@ -164,7 +178,9 @@ class App extends React.Component{
         }
     }
 
-    getWeather=async()=>{
+
+    //This method fetches the data from the API call cand then sets it to the variable in the constructor, which initialises it.
+    getWeather=async(props)=>{
         const apiCall= await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.state.city}&appid=${apiKey}`);
         const response= await apiCall.json().then((response)=>{
             this.setState({
@@ -189,7 +205,7 @@ class App extends React.Component{
            
     };
 
-
+    //This method fetches the data from the second API call and sets the value to the variable in the constructor, which initialises it.
     getWeather2=async(lat1, long1)=>{
         console.log(long1, lat1)
 
@@ -206,6 +222,8 @@ class App extends React.Component{
            
     };
 
+
+    //The render here allows for the variables to be used in the other components, and this data is passed through these variables.
     render(){
         return(
             <div className='App'> 
@@ -235,6 +253,9 @@ class App extends React.Component{
             />
             
         </div> 
+
+
+
         );
     }
 }
