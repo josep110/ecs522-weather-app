@@ -1,4 +1,5 @@
 var d = new Date();
+//This component holds the HTML layout just for the top section, where the country, logo, description, max and min temperatures are stored. The data is taken from App.js and is placed within the html using javascript.
 const Header = (props) => {
   return (
     <header>
