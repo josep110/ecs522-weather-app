@@ -17,10 +17,7 @@ class Card extends React.Component {
     newDate.setTime(weekday)
 
     // choose an icon based on weather description
-    if(this.props.day.weather[0].description.includes("light rain")){
-        var imgURL = lightRain
-    }
-    else if(this.props.day.weather[0].description.includes("rain") && this.props.day.weather[0].description.includes("sun")){
+    if(this.props.day.weather[0].description.includes("rain") && this.props.day.weather[0].description.includes("sun")){
         var imgURL = rainSun
     }
     else if(this.props.day.weather[0].description.includes("rain")){
@@ -32,7 +29,7 @@ class Card extends React.Component {
     else if(this.props.day.weather[0].description.includes("snow")){
         var imgURL = snow
     }
-    else if(this.props.day.weather[0].description.includes("lightning") || this.props.day.weather[0].description.includes("thunder")){
+    else if(this.props.day.weather[0].description.includes("lightning") || this.props.day.weather[0].description.includes("thunder") || this.props.day.weather[0].description.includes("storm")){
         var imgURL = storm
     }
     else{
@@ -102,7 +99,7 @@ class Card extends React.Component {
                 <p>Pressure: {Math.round(this.props.day.main.pressure)}</p>
                 <p>Sea Level: {Math.round(this.props.day.main.sea_level)}</p>
             </span>
-            <button id={"myBtn"+day} onClick={lessOrMore} >More Detail</button>
+            <button id={"myBtn"+day} onClick={lessOrMore} >Read more</button>
           </div>
         </div>
       </div>

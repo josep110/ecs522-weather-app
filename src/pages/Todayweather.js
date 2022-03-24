@@ -3,11 +3,14 @@ import moment from "moment";
 import windIncon from "./icons/wind2.ico" ;
 import humidity from "./icons/waterdrop.ico";
 import precipitation from "./icons/rain.ico";
-import "./Todayweather.css"
+import './Todayweather.css';
+
 
 
 function Todayweather (props)  {
 
+
+  
 return(
 
 <div className="weather-container">
@@ -40,8 +43,6 @@ return(
               </div>
         </main>
         </div>
-  
-  
 </div>
 )
 }
