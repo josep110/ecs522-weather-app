@@ -15,9 +15,11 @@ class App extends React.Component {
 
   state = {
     location:null,
-    degreeType: null,
-    lat:null,
-    lon:null,
+    //degreetype has been det to metric by default and will be changed according ot the settings
+    degreeType: "metric",
+    //lat and lon set by default 
+    lat:51.5211064,
+    lon:-0.1580341,
     
   }
   
@@ -35,7 +37,7 @@ class App extends React.Component {
    )}/>
       <Route  path='/Today' render={() => (
       
-      <Today  City={"to be passed"}/>
+      <Today  City={"to be passed"} Latitude={this.state.lat} Longitude={this.state.lon} Units={this.state.degreeType}/>
 )} />
       <Route  path='/FiveDayForecast' exact component={FiveDayForecast} />
       <Route path='/Profile' exact component={Profile} />
