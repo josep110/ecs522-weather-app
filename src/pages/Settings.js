@@ -3,12 +3,14 @@ import './settings-dark.css';
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { Children } from "react/cjs/react.production.min";
+import App from "../App";
 
 
 class Entry extends React.Component {
   constructor(props){
     super(props);
     this.state = {inputText: ""};
+    // console.log(props)
   }
 
   render(){
@@ -16,8 +18,7 @@ class Entry extends React.Component {
       <div>
         <h2>Username</h2>
         <input value={this.state.inputText} onChange={(e)=> this.setState({inputText: e.target.value})}/>
-        <button text="Submit"  onClick={() => }>Submit</button>
-        
+        <button text="Submit"  onClick={() => {this.props.parentCallback(this.state.inputText)}}>Submit</button>
       </div>
     )
   }
@@ -27,6 +28,7 @@ class Setting extends React.Component {
 
   constructor(props){
     super(props)
+    
     this.state = {
       triggered: false
     };
@@ -37,11 +39,11 @@ class Setting extends React.Component {
     this.setState({triggered: !this.state.triggered})
 
     if(e==="Dark Mode") {
-      // ModeChange();
+      this.props.parentCallback("dark");
     } else if (e==="Units"){
-      console.log("unit")
+      this.props.parentCallBack("celsius");
     } else {
-      console.log("location")
+      console.log(e)
     }
   }
 
@@ -69,21 +71,30 @@ class Setting extends React.Component {
   }
 
 } 
-const Settings = () => {
+class Settings extends React.Component {
+  constructor(props){
+    super(props);
+    console.log(props)
+    
+  }
+
+  render() {
+
     return (
-      <div>
-        <div className="App">
-          <div className="title">
-          <h1>App Settings</h1>
-          </div>
-          <div className="App-body">
-            <Entry label="Username"/>
-            <Setting label="Dark Mode" path=""/>
-            <Setting label="Units" path=""/>
+        <div>
+          <div className="App">
+            <div className="title">
+            <h1>App Settings</h1>
+            </div>
+            <div className="App-body">
+              <Entry label="Username" parentCallback={this.props.parentCallback}/>
+              <Setting label="Dark Mode" parentCallback={this.props.parentCallback}/>
+              <Setting label="Units" parentCallback={this.props.parentCallback}/>
+            </div>
           </div>
         </div>
-      </div>
-    )
+      )
+    }
 }
 
 

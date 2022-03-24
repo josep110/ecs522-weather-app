@@ -31,7 +31,7 @@ export const SidebarData = [
       },
       {
         title: 'Hourly',
-        path: '/Hourly',
+        path: '/App',
         icon: <AiIcons.AiOutlineCloud />,
         className: 'nav-text',
       }

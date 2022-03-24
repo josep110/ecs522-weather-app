@@ -1,6 +1,7 @@
 import React from "react";
 import './profile.css';
 import joseph from './images/joseph.jpg';
+import {Link} from "react-router-dom";
 
 class Section extends React.Component {
 
@@ -13,7 +14,7 @@ class Section extends React.Component {
 
   handleClick = (e) => {
   
-    this.setState({triggered: !this.state.triggered})s
+    this.setState({triggered: !this.state.triggered});
     
 
     if (e==="Home"){
@@ -28,29 +29,11 @@ class Section extends React.Component {
   }
 
   render() {
-
-    this.e = this.props.label;
-
-    if (this.state.triggered === true){
-      return (
-       <div>
-        
-        <button className="setting-triggered" onClick={(e) => this.handleClick(this.e)}>
-        <div>
-          <h2 className="settinglabel">{this.props.label}</h2>
-        </div>
-        </button>
-       </div>
-      )
-    } else {
-      return (
-        <button className="setting-untriggered" onClick={(e) => this.handleClick(this.e)}>
-        <div>
-          <h2 className="settinglabel">{this.props.label}</h2>
-        </div>
-        </button>
-      );
-    }
+    return (
+    <div>
+        <Link className="setting-untriggered" to={this.props.to}>{this.props.label}</Link>
+    </div>
+    )
   }
 }
 
@@ -64,10 +47,9 @@ const H_Settings = () => {
           </div>
           <div className="App-body">
             <img className="profilepic" src={joseph} alt="this is a picture"/>
-            <Section label="Home"/>
-            <Section label="Weather"/>
-            <Section label="Settings"/>
-            <Section label="Logout" />
+            <Section label="Home" to="./Home"/>
+            <Section label="Weather" to="./Weather"/>
+            <Section label="Settings" to="./Settings" />
           </div>
         </div>
       </div>
