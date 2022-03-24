@@ -9,11 +9,13 @@ import rainyIcon from"./icons/rain.ico";
 
 
 /** This is a class component that passes props to the Todayweather component.
- It takes geolocation props  that are then passed to the call of the openweathermap API. The data from this call is stored in the state variables and passed as props to the Todaywather component
+ It takes geolocation props  that are then passed to the call of the openweathermap API.
+ The data from this call is stored in the state variables and passed as props to the Todaywather component
  */
 
 
-//function that sets the correct weather icon according tot he current weather conditions i.e sunny, cloudy, etc. It takes the rangeID as a property
+/** function that sets the correct weather icon according tot he current weather conditions 
+i.e sunny, cloudy, etc. It takes the rangeID as a property*/
 function get_WeatherIcon(rangeId) {
       switch (true) {
         case rangeId >= 200 && rangeId < 232:
