@@ -46,7 +46,7 @@ class App extends React.Component { /* Prototype for root 'App' class */
         </Switch>
       </Router>
     
-)
+);
    
 }
 }
