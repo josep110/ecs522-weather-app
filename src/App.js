@@ -45,7 +45,7 @@ class App extends React.Component { /* Prototype for root 'App' class */
     )}/>
 <<<<<<< Updated upstream
 <Route exact path="/Today" render={() => (
-        <Today Latitude={"51.51257250195812"} Longitude={this.state.lon} Units={this.state.celsius} />
+        <Today Latitude={"51.51257250195812"} Longitude={"0.1580341"} Units={this.state.celsius} />
   )}/>
         <Route path='/Profile' exact component={Profile} />
         <Route path='/FiveDayForecast' exact component={FiveDayForecast} />
