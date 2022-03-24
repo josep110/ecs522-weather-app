@@ -35,24 +35,21 @@ class App extends React.Component { /* Prototype for root 'App' class */
         <Switch>
         <Route exact path="/Home" render={() => (
         
-          <Home Message={'Hi ' + this.state.username + '!'} />)}/>
+          <Home Message={'Hi ' + this.state.username + '!'} />
+    )}/>
    <Route  path='/Today' render={() => (
-      <Today Latitude={"51.51257250195812"} Longitude={"-0.12880590133788425"} Units={this.state.celsius}/>)} />
+      
+      <Today Latitude={"51.51257250195812"} Longitude={this.state.lon} Units={this.state.celsius}/>
      
         <Route path='/Profile' exact component={Profile} />
         <Route path='/FiveDayForecast' exact component={FiveDayForecast} />
         <Route path='/App' exact component={Apps} />
-        <Route path='/Settings' render={() =>( <Settings parentCallback={this.callbackFunction}/>)} />
+        <Route path='/Settings' exact component={() => <Settings parentCallback={this.callbackFunction}/>} />
         </Switch>
       </Router>
-    
-);
-   
+    );
 }
 }
-
-
-
 
 export default App;
 
