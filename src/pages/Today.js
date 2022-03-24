@@ -27,7 +27,7 @@ function get_WeatherIcon(rangeId) {
         case rangeId === 800:
           return(sunIcon);
         case rangeId >= 801 && rangeId <= 804:
-          return(precipitation);
+          return(cloudIcon);
         default:
           return(cloudIcon);;
       }
