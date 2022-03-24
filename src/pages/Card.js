@@ -99,7 +99,7 @@ class Card extends React.Component {
                 <p>Pressure: {Math.round(this.props.day.main.pressure)}</p>
                 <p>Sea Level: {Math.round(this.props.day.main.sea_level)}</p>
             </span>
-            <button id={"myBtn"+day} onClick={lessOrMore} >More Detail</button>
+            <button id={"myBtn"+day} onClick={lessOrMore} >Read more</button>
           </div>
         </div>
       </div>
