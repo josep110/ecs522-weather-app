@@ -13,7 +13,7 @@ class Section extends React.Component {
 
   handleClick = (e) => {
   
-    this.setState({triggered: !this.state.triggered})
+    this.setState({triggered: !this.state.triggered})s
     
 
     if (e==="Home"){
@@ -21,7 +21,7 @@ class Section extends React.Component {
     } else if(e==="Weather") {
       console.log("weather");
     } else if (e==="Settings"){
-      // Transition('/Settings');
+
     } else {
       console.log("Logout");
     }

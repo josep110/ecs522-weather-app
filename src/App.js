@@ -11,19 +11,20 @@ import React from 'react';
 
 
 
-class App extends React.Component {
+class App extends React.Component { /* Prototype for root 'App' class */
 
+  state = {username: ""}
   render(){
  
-  return (
+  return (    /* Sets up links to other .js files acting as application 'pages' */
     <Router>
       <Sidebar />
       <Switch>
       <Route exact path="/Home" render={() => (
       
-         <Home Message="Hi UserName !" />
+         <Home Message={'Hi !'} />
    )}/>
-      <Route  path='/Todayweather' exact component={WeatherToday} />
+      <Route  path='/Todayweather' exact component={WeatherToday} />    
       <Route path='/Profile' exact component={Profile} />
       <Route path='/FiveDayForecast' exact component={FiveDayForecast} />
       <Route path='/Hourly' exact component={Hourly} />

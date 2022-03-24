@@ -1,6 +1,27 @@
 import React from "react";
 import './settings-dark.css';
+import styled from "styled-components";
+import { Link } from "react-router-dom";
+import { Children } from "react/cjs/react.production.min";
 
+
+class Entry extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {inputText: ""};
+  }
+
+  render(){
+    return (
+      <div>
+        <h2>Username</h2>
+        <input value={this.state.inputText} onChange={(e)=> this.setState({inputText: e.target.value})}/>
+        <button text="Submit"  onClick={() => }>Submit</button>
+        
+      </div>
+    )
+  }
+}
 
 class Setting extends React.Component {
 
@@ -15,14 +36,8 @@ class Setting extends React.Component {
   
     this.setState({triggered: !this.state.triggered})
 
-    if (e==="Profile"){
-      // useNavigate(`./Login`)
-    } else if(e==="Dark Mode") {
-      if (this.state.triggered){
-        document.getElementById("stylesheet").setAttribute("href","settings.css");
-      } else {
-        document.getElementById("stylesheet").setAttribute("href","settings-dark.css");
-      }
+    if(e==="Dark Mode") {
+      // ModeChange();
     } else if (e==="Units"){
       console.log("unit")
     } else {
@@ -36,7 +51,7 @@ class Setting extends React.Component {
 
     if (this.state.triggered == true){
       return (
-        <button className="setting-triggered" onClick={(e) => this.handleClick(this.e)}>
+        <button to={this.props.path} className="setting-triggered" onClick={(e) => this.handleClick(this.e)}>
         <div>
           <h2 className="settinglabel">{this.props.label}</h2>
         </div>
@@ -44,7 +59,7 @@ class Setting extends React.Component {
       )
     } else {
       return (
-        <button className="setting-untriggered" onClick={(e) => this.handleClick(this.e)}>
+        <button to={this.props.path} className="setting-untriggered" onClick={(e) => this.handleClick(this.e)}>
         <div>
           <h2 className="settinglabel">{this.props.label}</h2>
         </div>
@@ -52,9 +67,8 @@ class Setting extends React.Component {
       );
     }
   }
-}
 
-
+} 
 const Settings = () => {
     return (
       <div>
@@ -63,14 +77,20 @@ const Settings = () => {
           <h1>App Settings</h1>
           </div>
           <div className="App-body">
-            <Setting label="Profile"/>
-            <Setting label="Dark Mode"/>
-            <Setting label="Units"/>
-            <Setting label="Location" />
+            <Entry label="Username"/>
+            <Setting label="Dark Mode" path=""/>
+            <Setting label="Units" path=""/>
           </div>
         </div>
       </div>
     )
 }
 
+
+const SettingsButton = styled(Link)`
+`;
+
 export default Settings;
+
+
+// TODO: Pass entered UName,Location to Home, Dark Mode!!
