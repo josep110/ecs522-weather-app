@@ -69,7 +69,7 @@ class Today extends React.Component{
 
           componentDidMount =()=>{
 
-             fetch(`https://api.openweathermap.org/data/2.5/weather/?lat=${this.props.Latitude}&lon=${this.props.Longitude}&units=${this.props.Units}&appid=c49b58637f116ba62e71ca04a520f9bb`)
+             fetch(`https://api.openweathermap.org/data/2.5/weather/?lat=${this.state.lat}&lon=${this.state.lon}&units=${this.state.units}&appid=c49b58637f116ba62e71ca04a520f9bb`)
             
             .then(res => res.json())
           .then(result => {
