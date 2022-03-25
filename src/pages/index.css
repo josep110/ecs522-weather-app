@@ -30,6 +30,23 @@ hr{
     text-transform: capitalize;
 }
 
+.form1{
+    text-align: center;
+   
+}
+.input{
+    background-color: #EEEEEE;
+    width: 25%;
+    text-align: center;
+}
+.button2{
+   text-align: center;
+   position:absolute;
+   right: 50%;
+   left: 45%;
+   width:10rem;
+ 
+}
 /*Logo classes*/
 .logo {
     color: #EEEEEE;
@@ -141,5 +158,8 @@ hr{
 .space{
     padding-bottom: 20px;
 }
+
+
+
 
 
