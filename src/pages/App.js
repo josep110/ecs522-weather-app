@@ -12,7 +12,7 @@ import './reset.css';
 import { useEffect } from 'react';
 
  
-const apiKey="8bcf728dfda203129b2f723df9feb085";
+const apiKey="99b18679f80c7f3071e7cadc69fd777f";
 
 
 //There is a class here with a constructor, where the variables are decalared and set to undefined.
@@ -36,13 +36,15 @@ class App extends React.Component{
             description3:"",
             error:false,
             dt:undefined,
-            city: "Hounslow",
+            city: "London",
             lat:undefined,
             lng:undefined,
             hourly:[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]
         };
         
         
+        this.onInputchange = this.onInputchange.bind(this);
+        this.onSubmitForm = this.onSubmitForm.bind(this);
        
         
         // console.log(this.state)
@@ -77,6 +79,17 @@ class App extends React.Component{
   componentDidMount(){
       this.getWeather();
       console.log(this.state)
+  }
+
+  onInputchange(event) {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  }
+
+  onSubmitForm() {
+    console.log(this.state)
+    this.getWeather();
   }
 
     
@@ -196,9 +209,9 @@ class App extends React.Component{
 
         })
         
-        
+            console.log("BLAH");
            console.log(this.state.lat)
-           
+           this.setState();
            
     };
 
@@ -223,7 +236,15 @@ class App extends React.Component{
     render(){
         return(
             <div className='App'> 
-            <style>{'body { background-color: #041562; }'}</style>
+            <form className='form1'>
+            <p>City:</p>
+            <input className='input' type="text"
+            name="city"
+            value={this.state.city}
+            onChange={this.onInputchange}
+          />
+      </form>
+      <button className='button2' onClick={this.onSubmitForm}>Submit</button>
             <Header 
             city={this.state.city} 
             country={this.state.country}
