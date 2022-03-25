@@ -19,6 +19,7 @@ class App extends React.Component { /* Prototype for root 'App' class */
     console.log(this.state)
   }
 
+
   callbackFunction = (entry) => {          /* Callback function for receiving data from child components */
     if (entry === "unit"){
       console.log("UNIT")
@@ -37,9 +38,10 @@ class App extends React.Component { /* Prototype for root 'App' class */
   render(){
  
     return (    /* Sets up links to other .js files acting as application 'pages' */
+    //The Router allows th app to swtich to the different pages via the Sidebar
       
       <Router>
-        <Sidebar />
+      <Sidebar />
         <Switch>
         <Route exact path="/Home" render={() => (
         

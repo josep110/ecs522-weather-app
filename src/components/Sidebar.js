@@ -8,7 +8,7 @@ import SubMenu from './SubMenu';
 import { IconContext } from 'react-icons/lib';
 
 
-
+//Sidebar implemented thoughout all the pages via Router 
 const Sidebar = () => {
   const [sidebar, setSidebar] = useState(false);
 
@@ -39,6 +39,7 @@ const Sidebar = () => {
 
 export default Sidebar;
 
+//styling of the Sidebar component
 const Nav = styled.div`
   background: #1E1C40;
   height: 80px;
