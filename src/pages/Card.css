@@ -1,4 +1,4 @@
-div{
+.container{
   text-align: center;
 }
 
@@ -28,7 +28,7 @@ th{
     padding: 7px;
 }
 
-img{
+.icon{
   display: block;
   margin-left: auto;
   margin-right: auto;
