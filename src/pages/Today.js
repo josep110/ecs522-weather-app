@@ -40,18 +40,23 @@ function get_WeatherIcon(rangeId) {
 
 
 class Today extends React.Component{
+
+      constructor (props) {
     //state variables to pass to the Todayweather component 
-      state = {
-            city: null,
-            temp:null,
-            lat:"51.5211064",
-            lon:"-0.1580341",
-            wind:null,
-          description:null,
-          humidity:null,
-          rangeId:null,
-          units:"metric",
-          }
+        super(props)
+        this.state = {
+                city: null,
+                temp:null,
+                lat:"51.5211064",
+                lon:"-0.1580341",
+                wind:null,
+                description:null,
+                humidity:null,
+                rangeId:null,
+                units:"metric",
+                cels: this.props.cels
+              }
+    }
 
           /** function to get the current location
            
@@ -90,7 +95,7 @@ class Today extends React.Component{
           render(){
             //we the state variables as propr to Todayweather
             return (
-                  <Todayweather City={this.state.city} temperature={this.state.temp} Wind={this.state.wind} Humidity={this.state.humidity} Description={this.state.description}     Icon={get_WeatherIcon(this.state.rangeId)}/>
+                  <Todayweather cels={this.props.cels} City={this.state.city} temperature={this.state.temp} Wind={this.state.wind} Humidity={this.state.humidity} Description={this.state.description}     Icon={get_WeatherIcon(this.state.rangeId)}/>
             )}
 }
 

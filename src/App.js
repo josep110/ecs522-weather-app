@@ -1,4 +1,4 @@
-// import './App.css';
+import './App.css';
 import Sidebar from './components/Sidebar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './pages/Home';
@@ -21,6 +21,7 @@ class App extends React.Component { /* Prototype for root 'App' class */
 
   callbackFunction = (entry) => {          /* Callback function for receiving data from child components */
     if (entry === "unit"){
+      console.log("UNIT")
       this.setState({celsius: !this.state.celsius})
     } else if (entry === "dark"){
       if (this.state.stylePath === "./App-alt.css"){
@@ -46,7 +47,7 @@ class App extends React.Component { /* Prototype for root 'App' class */
     )}/>
 
         <Route  path="/Today" render={() => (
-        <Today />
+        <Today cels={this.state.celsius} />
   )}/>  
         <Route path='/Profile' exact component={() => <Profile name={this.state.username} stylepath={this.state.stylePath}/>} />
         <Route path='/FiveDayForecast' exact component={FiveDayForecast}  stylepath={this.state.stylePath}/>
