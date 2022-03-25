@@ -36,6 +36,7 @@
 .icon-box{
       display:flex;
       justify-content: center;
+      margin-top:-8%;
 }
 .icon-profile{
       width:80%;
