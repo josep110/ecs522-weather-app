@@ -22,7 +22,7 @@ return(
 
                     <p className="city-text">{props.City}</p>
                     <p className="date-text">{moment().format("dddd "+'LL')}</p>
-                    <p className="temp">{Math.round(props.temperature)}&deg;</p>
+                    <p className="temp">{Math.round(props.temperature)}&deg;F</p>
                     <img className="main-icon" src={props.Icon}></img>
 
               <div className="wph-box">

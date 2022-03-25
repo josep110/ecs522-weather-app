@@ -14,7 +14,7 @@ import {useEffect, useState} from "react"
 function Item(props){
       return(
             <div className="item-box">
-            <img className="icon" src={props.Icon}></img>
+            <img className="iconItem" src={props.Icon}></img>
             <span className="iconText">{props.Text}</span>
             </div>)
 }
@@ -84,7 +84,7 @@ const API_URL='https://api.openweathermap.org/data/2.5';
       return(
             <div className="home-container">
 
-                  <div className="container">
+                  <div className="subcontainer">
                         <div className="header-box">
                         <div className="greeting-box "><Item  Icon={hand} Text={props.Message}></Item></div>
                         <div className="location-box"><Item  Icon={locpin} Text={data.name}></Item></div>
