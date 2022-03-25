@@ -75,18 +75,20 @@ class App extends React.Component{
    
     }
 
-
+//This method here calls the getWeather method.
   componentDidMount(){
       this.getWeather();
       console.log(this.state)
   }
 
+  //This method allows the state to be changed.
   onInputchange(event) {
     this.setState({
       [event.target.name]: event.target.value
     });
   }
 
+  //This method call the getWeather method on the form submit.
   onSubmitForm() {
     console.log(this.state)
     this.getWeather();
