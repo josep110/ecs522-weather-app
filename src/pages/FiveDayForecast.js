@@ -11,7 +11,7 @@ class FiveDayForecast extends React.Component {
     city: "London",
     country: "GB",
     //degreeType: Todayweather.props.cels
-    degreeType: true
+    degreeType: false
   }
 
   componentDidMount = () => {
