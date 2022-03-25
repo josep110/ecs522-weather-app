@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from './Card';
+import Todayweather from './Todayweather.js';
 
 class FiveDayForecast extends React.Component {
   //TODO: take location, unit etc. from settings
@@ -7,13 +8,29 @@ class FiveDayForecast extends React.Component {
   state = {
     days: [],
     location: "zip=10302",
-    city: "New York",
-    country: "US",
-    degreeType: "imperial"
+    city: "London",
+    country: "GB",
+    //degreeType: Todayweather.props.cels
+    degreeType: false
   }
 
   componentDidMount = () => {
-    const weatherURL = `http://api.openweathermap.org/data/2.5/forecast?${this.state.location},${this.state.country}&units=${this.state.degreeType}&APPID=e5f8ee9342a7aa4b3e39a90cf5a9e97f`;
+    console.log(this.state.degreeType)
+
+    var weatherURL="";
+
+
+    if(this.state.degreeType){
+      console.log("metric")
+      weatherURL = `http://api.openweathermap.org/data/2.5/forecast?q=${this.state.city}&units=metric&APPID=e5f8ee9342a7aa4b3e39a90cf5a9e97f`;
+    }
+    else{
+      console.log("imperial")
+      weatherURL = `http://api.openweathermap.org/data/2.5/forecast?q=${this.state.city}&units=imperial&APPID=e5f8ee9342a7aa4b3e39a90cf5a9e97f`;
+    }
+
+    console.log(weatherURL)
+
     fetch(weatherURL)
     .then(res => res.json())
     .then(data => {
@@ -27,7 +44,7 @@ class FiveDayForecast extends React.Component {
 
   // Card element (Card.js) returned for each day from API
   formatCards = () => {
-    return this.state.days.map((day, index) => <Card day={day} key={index}/>)
+    return this.state.days.map((day, index) => <Card day={day} key={index} units={this.state.degreeType}/>)
   }
 
 
