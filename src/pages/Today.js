@@ -44,8 +44,8 @@ class Today extends React.Component{
       state = {
             city: null,
             temp:null,
-            lat:"51.5211064",
-            lon:"-0.1580341",
+            lat:"51.509865",
+            lon:"-0.118092",
             wind:null,
           description:null,
           humidity:null,
@@ -53,19 +53,6 @@ class Today extends React.Component{
           units:"metric",
           }
 
-          /** function to get the current location
-           
-          getLocation(){
-          navigator.geolocation.getCurrentPosition(position =>{
-            this.setState({
-                  lat:JSON.stringify(position.coords.latitude),
-                  lon:JSON.stringify(position.coords.longitude),
-            })
-            console.log("latitude",this.state.lat , "longitude", this.state.lon)
-      })
-      }
-      */
-          
 
           componentDidMount =()=>{
 
@@ -80,8 +67,7 @@ class Today extends React.Component{
                   wind:result.wind.speed,
                   description:result.weather[0].description,
                   humidity:result.main.humidity,
-                  rangeId:result.weather[0].id,
-                  
+                  rangeId:result.weather[0].id,        
             })
           });
           }

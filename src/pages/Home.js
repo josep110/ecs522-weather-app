@@ -47,7 +47,6 @@ const API_URL='https://api.openweathermap.org/data/2.5';
           .then(res => res.json())
           .then(result => {
             setData(result)
-            console.log("weather in home page",result);
           });
         }
         fetchData();
