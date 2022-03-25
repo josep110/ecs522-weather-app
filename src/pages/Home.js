@@ -47,7 +47,7 @@ const API_URL='https://api.openweathermap.org/data/2.5';
           .then(res => res.json())
           .then(result => {
             setData(result)
-            console.log(result);
+            console.log("weather in home page",result);
           });
         }
         fetchData();
@@ -70,7 +70,7 @@ const API_URL='https://api.openweathermap.org/data/2.5';
                   return(rainPlans[Math.floor(Math.random()*rainPlans.length)]);
               case rangeId >= 600 && rangeId <= 622:  
                     return(plansSnow[Math.floor(Math.random()*plansSnow.length)]);
-              case rangeId >= 701 && rangeId <= 781:  
+              case rangeId=== 701|| 781 ||711||731 ||741||751||761||762||771||7811:  
                   return(fogPlans[Math.floor(Math.random()*fogPlans.length)]);
               case rangeId === 800:  
                   return(sunnyPlans[Math.floor(Math.random()*sunnyPlans.length)]);
@@ -89,7 +89,7 @@ const API_URL='https://api.openweathermap.org/data/2.5';
                         <div className="greeting-box "><Item  Icon={hand} Text={props.Message}></Item></div>
                         <div className="location-box"><Item  Icon={locpin} Text={data.name}></Item></div>
                         <div className="date-box"><Item  Icon={calendar} Text={moment().format("dddd"+'LL')}></Item></div>
-                        <div className="plan-box"><Item  Icon={ideaIcon} Text={get_plan()}></Item></div>
+                        <div className="plan-box"><Item  Icon={ideaIcon} Text={get_plan(data.weather)}></Item></div>
                         </div>
      
                   </div>
