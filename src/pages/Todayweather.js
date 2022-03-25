@@ -11,38 +11,46 @@ import './Todayweather.css';
 
 
 function Todayweather (props)  {
- 
-return(
+      
+      const handle = (number) =>  {
+            if (props.cels===true){
+                  return (Math.round(number).toString() + '°C')
+            } else {
+                  return (Math.round(((number)*(9/5)) + 32).toString() + '°F')
+            }
+      }
 
-<div className="weather-container">
+      return(
 
-      <div className="w-container">
+      <div className="weather-container">
 
-        <main class= "w-body">
+            <div className="w-container">
 
-                    <p className="city-text">{props.City}</p>
-                    <p className="date-text">{moment().format("dddd "+'LL')}</p>
-                    <p className="temp">{Math.round(props.temperature)}&deg;</p>
-                    <img className="main-icon" src={props.Icon}></img>
+            <main class= "w-body">
 
-              <div className="wph-box">
-                    <div className="wind">
-                          <img className="icon-drop" src={windIncon}></img>
-                          <p className="drop-text">{Math.round(props.Wind)} mph</p>
-                          </div>
-                    <div className="humidity">
-                          <img className="icon-drop" src={humidity}></img>
-                          <p className="drop-text">{Math.round(props.Humidity)} %</p>
-                          </div>
-                    <div className="couldCover">
-                          <img className="icon-drop" src={precipitation}></img>
-                         <p className="drop-text">{props.Description}</p>
-                          </div>
-              </div>
-        </main>
-        </div>
-</div>
-)
+                        <p className="city-text">{props.City}</p>
+                        <p className="date-text">{moment().format("dddd "+'LL')}</p>
+                        <p className="temp">{handle(props.temperature)}</p>
+                        <img className="main-icon" src={props.Icon}></img>
+
+                  <div className="wph-box">
+                        <div className="wind">
+                              <img className="icon-drop" src={windIncon}></img>
+                              <p className="drop-text">{Math.round(props.Wind)} mph</p>
+                              </div>
+                        <div className="humidity">
+                              <img className="icon-drop" src={humidity}></img>
+                              <p className="drop-text">{Math.round(props.Humidity)} %</p>
+                              </div>
+                        <div className="couldCover">
+                              <img className="icon-drop" src={precipitation}></img>
+                              <p className="drop-text">{props.Description}</p>
+                              </div>
+                  </div>
+            </main>
+            </div>
+      </div>
+      )
 }
 
 export default Todayweather;

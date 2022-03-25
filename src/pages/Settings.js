@@ -34,8 +34,8 @@ class Setting extends React.Component {     /* Prototype for Setting toggle */
 
     if(e==="Dark Mode") {
       this.props.parentCallback("dark");                    /* data sent back up DOM tree to root (App.js) */ 
-    } else if (e==="Units"){
-      this.props.parentCallback("celsius");
+    } else if ("Toggle Unit (Today Page)"){
+      this.props.parentCallback("unit");
     } else {
       console.log(e)
     }
@@ -58,7 +58,12 @@ class Setting extends React.Component {     /* Prototype for Setting toggle */
 class Settings extends React.Component {
   constructor(props){
     super(props);
-    console.log(props)
+    console.log(props.unit)
+    if (props.unit === true){
+      this.state = {unit: "Celsius"}
+    } else {
+      this.state = {unit: "Fahrenheit"}
+    }
     
   }
 
@@ -72,8 +77,8 @@ class Settings extends React.Component {
             </div>
             <div className="App-body">    
               <Entry label="Username" parentCallback={this.props.parentCallback}/>       
-              <Setting label="Dark Mode" parentCallback={this.props.parentCallback}/>
-              <Setting label="Units" parentCallback={this.props.parentCallback}/>
+              {/* <Setting label="Dark Mode" parentCallback={this.props.parentCallback}/> */}
+              <Setting label="Toggle Unit (Today Page)" parentCallback={this.props.parentCallback}/>
             </div>
           </div>
         </div>
